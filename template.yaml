@@ -1,6 +1,13 @@
 AWSTemplateFormatVersion: 2010-09-09
-Transform:
-- AWS::Serverless-2016-10-31
+Transform: AWS::Serverless-2016-10-31
+
+
+Outputs:
+
+  SurveyURL:
+    Description: "Link to your Serverless Survey"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/newsurvey"
+
 
 Resources:
 
