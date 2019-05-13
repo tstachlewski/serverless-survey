@@ -71,7 +71,7 @@ def lambda_handler(event, context):
                                     value = questions[questionName]['Values'][valueIterator]
                                     field_name = questionName + "_" + "".join([ c if c.isalnum() else "_" for c in value.lower() ])
                                     doc.input(name = field_name, type = 'hidden', value = "0",style="border-color: #" + str(theme) + "; ")
-                                    doc.input(name = field_name, id = value ,  type = 'checkbox', value = "1", style="border-color: #" + str(theme) + "; ")
+                                    doc.input(name = field_name, id = field_name ,  type = 'checkbox', value = "1", style="border-color: #" + str(theme) + "; ")
                                     text(" "+str(value))
                                     doc.stag('br')
                             
