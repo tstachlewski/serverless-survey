@@ -25,6 +25,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: survey.lambda_handler
+      CodeUri: .
       Runtime: python2.7
       Events:
         RestAPI:
@@ -37,6 +38,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: survey_submit.lambda_handler
+      CodeUri: .
       Runtime: python2.7
       Policies:
         - DynamoDBCrudPolicy:
