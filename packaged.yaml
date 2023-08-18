@@ -7,7 +7,7 @@ Outputs:
 Resources:
   Survey:
     Properties:
-      CodeUri: s3://tomash-serverless-survey/8e8e60ba268b89fabec9e4ef2bfce05e
+      CodeUri: s3://tomash-serverless-survey/5336b6396aadafc0c423c311fb9038eb
       Events:
         RestAPI:
           Properties:
@@ -15,11 +15,11 @@ Resources:
             Path: /newsurvey
           Type: Api
       Handler: survey.lambda_handler
-      Runtime: python2.7
+      Runtime: python3.7
     Type: AWS::Serverless::Function
   SurveySubmit:
     Properties:
-      CodeUri: s3://tomash-serverless-survey/8e8e60ba268b89fabec9e4ef2bfce05e
+      CodeUri: s3://tomash-serverless-survey/5336b6396aadafc0c423c311fb9038eb
       Environment:
         Variables:
           TABLE_NAME:
@@ -35,7 +35,7 @@ Resources:
       - DynamoDBCrudPolicy:
           TableName:
             Ref: SurveyTable
-      Runtime: python2.7
+      Runtime: python3.7
     Type: AWS::Serverless::Function
   SurveyTable:
     Properties:
