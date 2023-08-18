@@ -4,7 +4,9 @@ from yattag import Doc
 
 def lambda_handler(event, context):
 
-    configuration = yaml.load(open("config.yaml").read())
+    with open('config.yaml','r') as file:
+        configuration = yaml.safe_load(file)
+        
     questions = configuration['Questions'];
     title = configuration['Title'];
     author = configuration['Author'];
